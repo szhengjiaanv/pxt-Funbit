@@ -83,7 +83,7 @@ namespace Funbit {
         Nine = 26
     }
 
-    //% shim=IRV2::irCode
+    //% shim=FunbitIR::irCode
     function irCode(): number {
         return 0;
     }
