@@ -1,7 +1,5 @@
 #include "pxt.h"
 
-//% color=50 weight=80
-//% icon="\uf1eb"
 namespace FunbitIR { 
 int ir_code = 0x00;
 int ir_addr = 0x00;
