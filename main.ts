@@ -13,6 +13,11 @@ enum PingUnit {
 //% color="#2c3e50" weight=10
 namespace Funbit {
     const ADDR = 0x20
+    const CMD_MOTOR = 0x10
+    const CMD_ALL = 0xFF
+    const CMD_STOP = 0x00
+    const CMD_SERVO = 0x11
+    const CMD_RGBLED = 0x12
     /**
      * Send a ping and get the echo time (in microseconds) as a result
      * @param trig tigger pin
@@ -122,8 +127,20 @@ namespace Funbit {
     }
 
     export enum Dirs {
+        STOP = 0x0,
         FORWARD = 0x1,
         BACKWARD = 0x2,
+    }
+
+    export enum Servos {
+        S1 = 0x1,
+        S2 = 0x2,
+        S3 = 0x3,
+        S4 = 0x4,
+        S5 = 0x5,
+        S6 = 0x6,
+        S7 = 0x7,
+        S8 = 0x8
     }
 
     /**
@@ -132,17 +149,67 @@ namespace Funbit {
      * speed(0~255).
     */
     //% weight=90
-    //% blockId=FunbitMotor block="Motor|%index|dir|%Dirs|speed|%speed"
+    //% blockId=FunbitMotorStart block="Motor|%index|dir|%Dirs|speed|%speed"
     //% speed.min=0 speed.max=255
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
-    export function FunbitMotor(index: Motors, direction: Dirs, speed: number): void {
+    export function FunbitMotorStart(index: Motors, direction: Dirs, speed: number): void {
         let buf = pins.createBuffer(4);
-        buf[0] = 0x00;
-        buf[1] = 0x01;
-        buf[2] = 0x01;
-        buf[3] = 0xFF;
+        buf[0] = CMD_MOTOR;
+        buf[1] = index;
+        buf[2] = direction;
+        buf[3] = speed;
         pins.i2cWriteBuffer(ADDR, buf);
-
     }
+
+    //% weight=89
+    //% blockId=FunbitMotorStop block="Motor Stop|%index"
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
+    export function FunbitMotorStop(index: Motors): void {
+        let buf = pins.createBuffer(4);
+        buf[0] = CMD_MOTOR;
+        buf[1] = index;
+        buf[2] = CMD_STOP; //stop
+        buf[3] = 0x00;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
+    //% weight=87
+    //% blockId=FunbitMotorStopAll block="Motor Stop All"
+    export function FunbitMotorStopAll(): void {
+        let buf = pins.createBuffer(4);
+        buf[0] = CMD_MOTOR;
+        buf[1] = CMD_ALL;
+        buf[2] = CMD_STOP; //stop
+        buf[3] = 0x00;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
+    //% weight=86
+    //% blockId=FunbitServoStart block="Servo|%index|degree|%degree"
+    //% degree.min=0 degree.max=180
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
+    export function FunbitServoStart(index: Servos, degree: number): void {
+        let buf = pins.createBuffer(4);
+        buf[0] = CMD_SERVO;
+        buf[1] = index;
+        buf[2] = degree;
+        buf[3] = 0x00;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
+    //% weight=85
+    //% blockId=FunbitRGBLED block="|red|%red|green|%green|blue|%blue"
+    //% red.min=0 red.max=255
+    //% green.min=0 green.max=255
+    //% blue.min=0 blue.max=255
+    export function FunbitRGBLED(red: number, green: number, blue: number): void {
+        let buf = pins.createBuffer(4);
+        buf[0] = CMD_RGBLED;
+        buf[1] = red;
+        buf[2] = green;
+        buf[3] = blue;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
 }
