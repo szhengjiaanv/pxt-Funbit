@@ -127,9 +127,9 @@ namespace Funbit {
     }
 
     export enum Dirs {
-        STOP = 0x0,
         FORWARD = 0x1,
         BACKWARD = 0x2,
+        STOP = 0x0
     }
 
     export enum Servos {
@@ -144,9 +144,9 @@ namespace Funbit {
     }
 
     export enum LEDMODE {
-        OFF = 0x0,
         ON = 0x1,
-        BLINKING = 0x2
+        BLINKING = 0x2,
+        OFF = 0x0
     }
 
     /**
