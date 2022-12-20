@@ -143,6 +143,12 @@ namespace Funbit {
         S8 = 0x8
     }
 
+    export enum LEDMODE {
+        OFF = 0x0,
+        ON = 0x1,
+        BLINKING = 0x2
+    }
+
     /**
      * Execute a motor
      * M1~M4.
@@ -199,16 +205,17 @@ namespace Funbit {
     }
 
     //% weight=85
-    //% blockId=FunbitRGBLED block="|red|%red|green|%green|blue|%blue"
+    //% blockId=FunbitRGBLED block="|RGB LED red|%red|green|%green|blue|%blue|mode|%LEDMODE"
     //% red.min=0 red.max=255
     //% green.min=0 green.max=255
     //% blue.min=0 blue.max=255
-    export function FunbitRGBLED(red: number, green: number, blue: number): void {
-        let buf = pins.createBuffer(4);
+    export function FunbitRGBLED(red: number, green: number, blue: number, mode: LEDMODE): void {
+        let buf = pins.createBuffer(5);
         buf[0] = CMD_RGBLED;
         buf[1] = red;
         buf[2] = green;
         buf[3] = blue;
+        buf[4] = mode;
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
