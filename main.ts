@@ -12,6 +12,7 @@ enum PingUnit {
  */
 //% color="#2c3e50" weight=10
 namespace Funbit {
+    const ADDR = 0x20
     /**
      * Send a ping and get the echo time (in microseconds) as a result
      * @param trig tigger pin
@@ -110,5 +111,38 @@ namespace Funbit {
     export function IR_Button(Button: IRButtons): boolean {
         return (IR_Val & 0x00ff) == Button
     }
+    /**
+     * The user selects the 4-way dc motor.
+     */
+    export enum Motors {
+        M1 = 0x1,
+        M2 = 0x2,
+        M3 = 0x3,
+        M4 = 0x4
+    }
 
+    export enum Dirs {
+        FORWARD = 0x1,
+        BACKWARD = 0x2,
+    }
+
+    /**
+     * Execute a motor
+     * M1~M4.
+     * speed(0~255).
+    */
+    //% weight=90
+    //% blockId=FunbitMotor block="Motor|%index|dir|%Dirs|speed|%speed"
+    //% speed.min=0 speed.max=255
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
+    //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
+    export function FunbitMotor(index: Motors, direction: Dirs, speed: number): void {
+        let buf = pins.createBuffer(4);
+        buf[0] = 0x00;
+        buf[1] = 0x01;
+        buf[2] = 0x01;
+        buf[3] = 0xFF;
+        pins.i2cWriteBuffer(ADDR, buf);
+
+    }
 }
