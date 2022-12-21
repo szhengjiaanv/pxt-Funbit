@@ -203,6 +203,7 @@ namespace Funbit {
     }
 
     //% weight=85
+    //% inlineInputMode=inline
     //% blockId=FunbitRGBLED block="LED%LEDMODE R%red G%green B%blue"
     //% red.min=0 red.max=255
     //% green.min=0 green.max=255
