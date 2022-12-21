@@ -202,7 +202,6 @@ namespace Funbit {
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
-
     //% weight=85
     //% blockId=FunbitRGBLED block="LED%LEDMODE R%red G%green B%blue"
     //% red.min=0 red.max=255
