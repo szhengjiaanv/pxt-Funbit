@@ -128,8 +128,7 @@ namespace Funbit {
 
     export enum Dirs {
         FORWARD = 0x1,
-        BACKWARD = 0x2,
-        STOP = 0x0
+        BACKWARD = 0x2
     }
 
     export enum Servos {
@@ -145,8 +144,7 @@ namespace Funbit {
 
     export enum LEDMODE {
         ON = 0x1,
-        BLINKING = 0x2,
-        OFF = 0x0
+        BLINKING = 0x2
     }
 
     /**
@@ -205,7 +203,7 @@ namespace Funbit {
     }
 
     //% weight=85
-    //% blockId=FunbitRGBLED block="|RGB LED red|%red|green|%green|blue|%blue|mode|%LEDMODE"
+    //% blockId=FunbitRGBLED block="|RGB LED R|%red|G|%green|B|%blue|Mode|%LEDMODE"
     //% red.min=0 red.max=255
     //% green.min=0 green.max=255
     //% blue.min=0 blue.max=255
@@ -216,6 +214,18 @@ namespace Funbit {
         buf[2] = green;
         buf[3] = blue;
         buf[4] = mode;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
+    //% weight=83
+    //% blockId=FunbitRGBLEDOFF block="RGB LED OFF"
+    export function FunbitRGBLEDOFF(): void {
+        let buf = pins.createBuffer(5);
+        buf[0] = CMD_RGBLED;
+        buf[1] = 0;
+        buf[2] = 0;
+        buf[3] = 0;
+        buf[4] = 0;  //off
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
