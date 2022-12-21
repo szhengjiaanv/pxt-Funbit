@@ -203,12 +203,11 @@ namespace Funbit {
     }
 
     //% weight=85
-    //% blockGap=10
-    //% blockId=FunbitRGBLED block="|RGB LED R|%red|G|%green|B|%blue|Mode|%LEDMODE"
+    //% blockId=FunbitRGBLED block="LED|%LEDMODE|R|%red|G|%green|B|%blue"
     //% red.min=0 red.max=255
     //% green.min=0 green.max=255
     //% blue.min=0 blue.max=255
-    export function FunbitRGBLED(red: number, green: number, blue: number, mode: LEDMODE): void {
+    export function FunbitRGBLED(mode: LEDMODE, red: number, green: number, blue: number): void {
         let buf = pins.createBuffer(5);
         buf[0] = CMD_RGBLED;
         buf[1] = red;
