@@ -12,7 +12,7 @@ enum PingUnit {
  */
 //% color="#2c3e50" weight=10
 namespace Funbit {
-    const ADDR = 0x20
+    const ADDR = 0x10
     const CMD_MOTOR = 0x10
     const CMD_ALL = 0xFF
     const CMD_STOP = 0x00
@@ -205,7 +205,7 @@ namespace Funbit {
 
     //% weight=85
     //% inlineInputMode=inline
-    //% blockId=FunbitRGBLED block="LED%LEDMODE R%red G%green B%blue"
+    //% blockId=FunbitRGBLED block="LED%LEDMODE Red%red Green%green Blue%blue"
     //% red.min=0 red.max=255
     //% green.min=0 green.max=255
     //% blue.min=0 blue.max=255
