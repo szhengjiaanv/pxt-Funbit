@@ -22,11 +22,11 @@ namespace Funbit {
     let IR_Val = 0
 
     enum PingUnit {
-        //% blockId="MicroSeconds" block="μs"
+        //% blockId="MicroSeconds" block="MicroSeconds"
         MicroSeconds,
-        //% blockId="Centimeters" block="cm"
+        //% blockId="Centimeters" block="Centimeters"
         Centimeters,
-        //% blockId="Inches" block="inches"
+        //% blockId="Inches" block="Inches"
         Inches
     }
 
