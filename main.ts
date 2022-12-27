@@ -2,7 +2,7 @@
 /**
  * Funbit and ping utilities
  */
-//% color="#6167d5" weight=10 icon="\uf1b9"
+//% color="#6167d5" weight=10 icon="\uf1ba"
 namespace Funbit {
     const ADDR = 0x10
     const CMD_MOTOR = 0x10
