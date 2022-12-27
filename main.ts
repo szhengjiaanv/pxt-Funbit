@@ -1,16 +1,8 @@
-enum PingUnit {
-    //% block="μs"
-    MicroSeconds,
-    //% block="cm"
-    Centimeters,
-    //% block="inches"
-    Inches
-}
 
 /**
  * Funbit and ping utilities
  */
-//% color="#2c3e50" weight=10
+//% color="#6167d5" weight=10 icon="\uf1b9"
 namespace Funbit {
     const ADDR = 0x10
     const CMD_MOTOR = 0x10
@@ -26,6 +18,16 @@ namespace Funbit {
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
     let IR_Val = 0
+
+    enum PingUnit {
+        //% block="μs"
+        MicroSeconds,
+        //% block="cm"
+        Centimeters,
+        //% block="inches"
+        Inches
+    }
+
     //% blockId=Funbit_ping block="ping trig %trig|echo %echo|unit %unit"
     export function ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
