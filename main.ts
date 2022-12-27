@@ -1,6 +1,7 @@
 
 /**
- * Funbit and ping utilities
+ * Funbit 
+ * Copyright (c) Shenzhen Hengjiaan Technology Co., Ltd
  */
 //% color="#6167d5" weight=10 icon="\uf0d1"
 namespace Funbit {
