@@ -11,7 +11,8 @@
     "files": [
         "README.md",
         "main.ts",
-        "IRReceiver.cpp"
+        "IRReceiver.cpp",
+        "_locales/zh-cn/Funbit-strings.json"
     ],
     "testFiles": [
         "test.ts"
