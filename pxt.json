@@ -12,7 +12,8 @@
         "README.md",
         "main.ts",
         "IRReceiver.cpp",
-        "_locales/zh-cn/Funbit-strings.json"
+        "_locales/zh-cn/Funbit-strings.json",
+        "_locales/fr/Funbit-strings.json"
     ],
     "testFiles": [
         "test.ts"

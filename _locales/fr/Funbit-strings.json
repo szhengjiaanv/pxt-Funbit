@@ -1,0 +1,5 @@
+{
+    "Funbit.PingUnit.MicroSeconds|block": "fr1",
+    "Funbit.PingUnit.Centimeters|block": "fr2",
+    "Funbit.PingUnit.Inches|block": "fr3"
+}
