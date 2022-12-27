@@ -1,7 +1,8 @@
 {
-    "name": "pxt-funbit",
-    "version": "0.0.0",
-    "description": "",
+    "name": "pxt-Funbit",
+    "version": "0.1.1",
+    "description": "HALJIA Fun Bit",
+    "license": "MIT",
     "dependencies": {
         "core": "*",
         "radio": "*",
