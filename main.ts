@@ -183,7 +183,7 @@ namespace Funbit {
     }
 
     //% weight=87
-    //% blockId=FunbitMotorStopAll block="Motor Stop All"
+    //% blockId=FunbitMotorStopAll block="Motor StopAll"
     export function FunbitMotorStopAll(): void {
         let buf = pins.createBuffer(4);
         buf[0] = CMD_MOTOR;

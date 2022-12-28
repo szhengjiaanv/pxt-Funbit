@@ -1,5 +1,6 @@
 {
     "Funbit.PingUnit.MicroSeconds|block": "微秒（μs）",
     "Funbit.PingUnit.Centimeters|block": "厘米（cm）",
-    "Funbit.PingUnit.Inches|block": "英寸（Inches）"
+    "Funbit.PingUnit.Inches|block": "英寸（Inches）",
+    "Funbit.FunbitMotorStopAll|block": "全部停止"
 }
