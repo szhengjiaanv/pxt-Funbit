@@ -23,14 +23,14 @@ namespace Funbit {
 
     enum PingUnit {
         //% blockId="MicroSeconds" block="MicroSeconds"
-        MicroSeconds,
+        MicroSeconds = 1,
         //% blockId="Centimeters" block="Centimeters"
-        Centimeters,
+        Centimeters = 2,
         //% blockId="Inches" block="Inches"
-        Inches
+        Inches = 3
     }
 
-    //% blockId=Funbit_ping block="ping trig %trig|echo %echo|unit %unit"
+    //% blockId=Funbit_ping block="Ping trig %trig|echo %echo|unit %unit"
     export function ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
