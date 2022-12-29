@@ -29,7 +29,7 @@ namespace Funbit {
     }
 
     //% blockId=Funbit_ping block="Ultrasonic trig %trig|echo %echo|unit %unit"
-    //% trig.defl = DigitalPin.P14  echo.defl = DigitalPin.P15
+    //% trig.defl = P14  echo.defl = P15
     //% inlineInputMode=inline
     export function Funbit_ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
