@@ -1,7 +1,7 @@
 {
     "Funbit.PingUnit.MicroSeconds|block": "微秒（μs）",
-    "Funbit.PingUnit.Centimeters|block": "厘米（cm）",
-    "Funbit.PingUnit.Inches|block": "英寸（Inches）",
+    "Funbit.PingUnit.Centimeters|block": "厘米",
+    "Funbit.PingUnit.Inches|block": "英寸",
     "Funbit.Funbit_ping|block": "超声波测距 trig端口%trig echo端口%echo 单位%unit",
     "Funbit.IRButtons.Up|block": "上",
     "Funbit.IRButtons.Left|block": "左",
