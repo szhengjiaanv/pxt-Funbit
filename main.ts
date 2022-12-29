@@ -29,6 +29,7 @@ namespace Funbit {
     }
 
     //% blockId=Funbit_ping block="Ultrasonic trig %trig|echo %echo|unit %unit"
+    //% trig.defl = DigitalPin.P14  echo.defl = DigitalPin.P15
     //% inlineInputMode=inline
     export function Funbit_ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
@@ -99,7 +100,7 @@ namespace Funbit {
     //% weight=25
     //% block="On IR receiving"
     export function IR_callback(handler: () => void) {
-        pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
+        pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
         control.onEvent(98, 3500, handler)
         control.inBackground(() => {
             while (true) {
