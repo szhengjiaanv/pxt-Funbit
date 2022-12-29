@@ -2,5 +2,5 @@
     "Funbit.PingUnit.MicroSeconds|block": "fr1",
     "Funbit.PingUnit.Centimeters|block": "fr2",
     "Funbit.PingUnit.Inches|block": "fr3",
-    "Funbit.FunbitMotorStopAll|block":"stop all"
+    "Funbit.FunbitMotorStopAll|block":"fr stop all"
 }
