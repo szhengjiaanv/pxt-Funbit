@@ -54,13 +54,13 @@ namespace Funbit {
     export enum IRButtons {
         //% blcok="Menu"
         Menu = 2,
-        //% blockId="Up" blcok="Up"
+        //% blockId="Up1" blcok="Up1"
         Up = 5,
-        //% blockId="Left" blcok="Left"
+        //% blockId="Left1" blcok="Left1"
         Left = 8,
-        //% blockId="Right" blcok="Right"
+        //% blockId="Right1" blcok="Right1"
         Right = 10,
-        //% blockId="Down" blcok="Down"
+        //% blockId="Down1" blcok="Down1"
         Down = 13,
         //% blockId="OK" blcok="OK"
         OK = 9,
