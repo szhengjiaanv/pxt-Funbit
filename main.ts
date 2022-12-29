@@ -22,16 +22,15 @@ namespace Funbit {
     let IR_Val = 0
 
     export enum PingUnit {
-        //% blockId="MicroSeconds" block="MicroSeconds"
-        MicroSeconds = 1,
         //% blockId="Centimeters" block="Centimeters"
-        Centimeters = 2,
+        Centimeters = 1,
         //% blockId="Inches" block="Inches"
-        Inches = 3
+        Inches = 2
     }
 
     //% blockId=Funbit_ping block="Ultrasonic trig %trig|echo %echo|unit %unit"
-    export function ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
+    //% inlineInputMode=inline
+    export function Funbit_ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
         pins.digitalWritePin(trig, 0);
@@ -131,8 +130,10 @@ namespace Funbit {
     }
 
     export enum Dirs {
-        FORWARD = 0x1,
-        BACKWARD = 0x2
+        //% blockId="Forward" block="Forward"
+        Forward = 0x1,
+        //% blockId="Backward" block="Backward"
+        Backward = 0x2
     }
 
     export enum Servos {
@@ -147,8 +148,10 @@ namespace Funbit {
     }
 
     export enum LEDMODE {
+        //% block="ON"
         ON = 0x1,
-        BLINKING = 0x2
+        //% block="Blinking"
+        Blinking = 0x2
     }
 
     /**
