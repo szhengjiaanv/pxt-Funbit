@@ -29,7 +29,6 @@ namespace Funbit {
     }
 
     //% blockId=Funbit_ping block="Ultrasonic trig %trig|echo %echo|unit %unit"
-    //% trig.defl = P14  echo.defl = P15
     //% inlineInputMode=inline
     export function Funbit_ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
@@ -187,7 +186,7 @@ namespace Funbit {
     }
 
     //% weight=87
-    //% blockId=FunbitMotorStopAll block="Motor StopAll"
+    //% blockId=FunbitMotorStopAll block="Motor Stop All"
     export function FunbitMotorStopAll(): void {
         let buf = pins.createBuffer(4);
         buf[0] = CMD_MOTOR;
@@ -213,7 +212,7 @@ namespace Funbit {
 
     //% weight=85
     //% inlineInputMode=inline
-    //% blockId=FunbitRGBLED block="LED%LEDMODE Red%red Green%green Blue%blue"
+    //% blockId=FunbitRGBLED block="RGB LED%LEDMODE Red%red Green%green Blue%blue"
     //% red.min=0 red.max=255
     //% green.min=0 green.max=255
     //% blue.min=0 blue.max=255
