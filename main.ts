@@ -161,7 +161,7 @@ namespace Funbit {
     */
     //% weight=90
     //% blockId=FunbitMotorStart block="Motor|%index|dir|%Dirs|speed|%speed"
-    //% speed.min=0 speed.max=255
+    //% speed.min=0 speed.max=255 speed.defl=200
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
     export function FunbitMotorStart(index: Motors, direction: Dirs, speed: number): void {

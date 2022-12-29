@@ -14,12 +14,12 @@
     "Funbit.IR_Button|block": "红外遥控器%Button键被按下",
     "Funbit.Dirs.Forward|block": "正转",
     "Funbit.Dirs.Backward|block": "反转",
-    "Funbit.LEDMODE.On|block": "打开",
+    "Funbit.LEDMODE.ON|block": "打开",
     "Funbit.LEDMODE.Blinking|block": "闪烁",
     "Funbit.FunbitMotorStart|block": "电机%index 方向%Dirs 速度%speed",
     "Funbit.FunbitMotorStop|block": "电机%index停止",
     "Funbit.FunbitMotorStopAll|block": "全部电机停止",
     "Funbit.FunbitServoStart|block": "舵机%index 角度%degree",
     "Funbit.FunbitRGBLED|block": "RGB灯%LEDMODE 红%red 绿%green 蓝%blue",
-    "Funbit.FunbitRGBLEDOFF|block": "RGB LED灯开闭"
+    "Funbit.FunbitRGBLEDOFF|block": "RGB灯关闭"
 }
