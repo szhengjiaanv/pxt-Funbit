@@ -117,7 +117,7 @@ namespace Funbit {
     //% block="IR Button %Button is pressed"
     //% weight=15
     export function IR_Button(Button: IRButtons): boolean {
-        basic.showNumber(IR_Val) //for display code
+        basic.showNumber(IR_Val & 0x00ff) //for display code
         return (IR_Val & 0x00ff) == Button
     }
     /**
