@@ -240,4 +240,49 @@ namespace Funbit {
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
+    export enum position 
+    {
+        //% blockId="LeftSide" block="Left side"
+        LeftSide = 0,
+        //% blockId="RightSide" block="Right side"
+        RightSide = 1
+    }
+
+    export enum line
+    {
+        //% blockId="White" block="White Line"
+        White = 0,
+        //% blockId="Black" block="Black Line"
+        Black = 1
+    }
+
+    //% blockId=Tracking block="Tracking|position %position|line %line"
+    //% weight=82
+    export function Tracking(pos: position, l: line): boolean
+    {
+        let ret: boolean = false;
+        pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
+        pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+        switch (pos) 
+        {
+            case position.LeftSide: 
+            {
+                if (pins.digitalReadPin(DigitalPin.P13) == l) 
+                    ret = true;
+                else
+                    ret = false;
+                break;
+            }
+
+            case position.RightSide: 
+            {
+                if (pins.digitalReadPin(DigitalPin.P14) == l) 
+                    ret = true;
+                else 
+                    ret = false;
+                break;
+            }
+        }
+        return ret;
+    }
 }
