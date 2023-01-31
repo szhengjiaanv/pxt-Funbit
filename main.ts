@@ -51,6 +51,7 @@ namespace Funbit {
     /**
      * IR controller button
      */
+    /*
     export enum IRButtons {
         //% blcok="Menu"
         Menu = 2,
@@ -110,16 +111,17 @@ namespace Funbit {
                 basic.pause(20)
             }
         })
-    }
+    }*/
     /**
      * TODO: Get IR value
      */
+    /*
     //% block="IR Button %Button is pressed"
     //% weight=15
     export function IR_Button(Button: IRButtons): boolean {
         //basic.showNumber(IR_Val) //for display code
         return (IR_Val & 0x00ff) == Button
-    }
+    }*/
     /**
      * The user selects the 4-way dc motor.
      */
