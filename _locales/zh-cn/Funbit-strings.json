@@ -17,5 +17,5 @@
     "Funbit.position.RightSide|block": "右侧",
     "Funbit.line.White|block": "白线",
     "Funbit.line.Black|block": "黑线",
-    "Funbit.Tracking|block": "循迹 位置%position 检查%line"
+    "Funbit.Tracking|block": "循迹 位置%position 感应到%line"
 }
