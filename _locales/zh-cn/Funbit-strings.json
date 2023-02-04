@@ -3,15 +3,6 @@
     "Funbit.PingUnit.Centimeters|block": "厘米",
     "Funbit.PingUnit.Inches|block": "英寸",
     "Funbit.Funbit_ping|block": "超声波测距 trig端口%trig echo端口%echo 单位%unit",
-    "Funbit.IRButtons.Up|block": "上",
-    "Funbit.IRButtons.Left|block": "左",
-    "Funbit.IRButtons.Right|block": "右",
-    "Funbit.IRButtons.Down|block": "下",
-    "Funbit.IRButtons.Plus|block": "+",
-    "Funbit.IRButtons.Minus|block": "-",
-    "Funbit.IRButtons.Back|block": "返回",
-    "Funbit.IR_callback|block": "接收到红外遥控器信号时",
-    "Funbit.IR_Button|block": "红外遥控器%Button键被按下",
     "Funbit.Dirs.Forward|block": "正转",
     "Funbit.Dirs.Backward|block": "反转",
     "Funbit.LEDMODE.ON|block": "打开",
@@ -21,5 +12,10 @@
     "Funbit.FunbitMotorStopAll|block": "全部电机停止",
     "Funbit.FunbitServoStart|block": "舵机%index 角度%degree",
     "Funbit.FunbitRGBLED|block": "RGB灯%LEDMODE 红%red 绿%green 蓝%blue",
-    "Funbit.FunbitRGBLEDOFF|block": "RGB灯关闭"
+    "Funbit.FunbitRGBLEDOFF|block": "RGB灯关闭",
+    "Funbit.position.LeftSide|block": "左侧",
+    "Funbit.position.RightSide|block": "右侧",
+    "Funbit.line.White|block": "白线",
+    "Funbit.line.Black|block": "黑线",
+    "Funbit.Tracking|block": "循迹 位置%position 检查%line"
 }

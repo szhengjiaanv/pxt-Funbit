@@ -19,7 +19,6 @@ namespace Funbit {
      * @param unit desired conversion unit
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
-    let IR_Val = 0
 
     export enum PingUnit {
         //% blockId="Centimeters" block="Centimeters"
@@ -48,80 +47,7 @@ namespace Funbit {
             default: return d;
         }
     }
-    /**
-     * IR controller button
-     */
-    /*
-    export enum IRButtons {
-        //% blcok="Menu"
-        Menu = 2,
-        //% blockId="Up" blcok="Up"
-        Up = 5,
-        //% blockId="Left" blcok="Left"
-        Left = 8,
-        //% blockId="Right" blcok="Right"
-        Right = 10,
-        //% blockId="Down" blcok="Down"
-        Down = 13,
-        //% blockId="OK" blcok="OK"
-        OK = 9,
-        //% blockId="Plus" blcok="Plus"
-        Plus = 4,
-        //% blockId="Minus" blcok="Minus"
-        Minus = 12,
-        //% blockId="Back" blcok="Back"
-        Back = 6,
-        //% block="0"
-        Zero = 14,
-        //% block="1"
-        One = 16,
-        //% block="2"
-        Two = 17,
-        //% block="3"
-        Three = 18,
-        //% block="4"
-        Four = 20,
-        //% block="5"
-        Five = 21,
-        //% block="6"
-        Six = 22,
-        //% block="7"
-        Seven = 24,
-        //% block="8"
-        Eight = 25,
-        //% block="9"
-        Nine = 26
-    }
-
-    //% shim=FunbitIR::irCode
-    function irCode(): number {
-        return 0;
-    }
-    //% weight=25
-    //% block="On IR receiving"
-    export function IR_callback(handler: () => void) {
-        pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
-        control.onEvent(98, 3500, handler)
-        control.inBackground(() => {
-            while (true) {
-                IR_Val = irCode()
-                if (IR_Val != 0xff00) {
-                    control.raiseEvent(98, 3500, EventCreationMode.CreateAndFire)
-                }
-                basic.pause(20)
-            }
-        })
-    }*/
-    /**
-     * TODO: Get IR value
-     */
-    /*
-    //% block="IR Button %Button is pressed"
-    //% weight=15
-    export function IR_Button(Button: IRButtons): boolean {
-        //basic.showNumber(IR_Val) //for display code
-        return (IR_Val & 0x00ff) == Button
-    }*/
+    
     /**
      * The user selects the 4-way dc motor.
      */

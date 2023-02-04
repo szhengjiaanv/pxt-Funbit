@@ -1,7 +1,7 @@
 {
     "name": "Funbit",
-    "version": "0.1.1",
-    "description": "HALJIA Fun Bit",
+    "version": "1.0.1",
+    "description": "HALJIA Fun Bit V1.0",
     "license": "MIT",
     "dependencies": {
         "core": "*",
