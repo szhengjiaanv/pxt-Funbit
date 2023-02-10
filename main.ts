@@ -190,7 +190,7 @@ namespace Funbit {
     {
         let ret: boolean = false;
         pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
-        pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+        pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
         switch (pos) 
         {
             case position.LeftSide: 
@@ -204,7 +204,7 @@ namespace Funbit {
 
             case position.RightSide: 
             {
-                if (pins.digitalReadPin(DigitalPin.P14) == l) 
+                if (pins.digitalReadPin(DigitalPin.P16) == l) 
                     ret = true;
                 else 
                     ret = false;
