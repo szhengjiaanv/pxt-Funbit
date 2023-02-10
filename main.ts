@@ -4,7 +4,7 @@
  * 
  * Support email:  support@haljia.com
  */
-//% color="#6167d5" weight=10 icon="\uf0d1"
+//% color="#6167d5" weight=20 icon="\uf0d1"
 namespace Funbit {
     const ADDR = 0x10
     const CMD_MOTOR = 0x10
