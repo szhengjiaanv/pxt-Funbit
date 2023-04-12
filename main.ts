@@ -12,6 +12,7 @@ namespace Funbit {
     const CMD_STOP = 0x00
     const CMD_SERVO = 0x11
     const CMD_RGBLED = 0x12
+    const CMD_STEPPERMOTOR28 = 0x19
     /**
      * Send a ping and get the echo time (in microseconds) as a result
      * @param trig tigger pin
@@ -27,6 +28,7 @@ namespace Funbit {
         Inches = 2
     }
 
+    //% weight=91
     //% blockId=Funbit_ping block="Ultrasonic trig %trig|echo %echo|unit %unit"
     //% inlineInputMode=inline
     export function Funbit_ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
@@ -88,7 +90,7 @@ namespace Funbit {
      * M1~M4.
      * speed(0~255).
     */
-    //% weight=90
+    //% weight=99
     //% blockId=FunbitMotorStart block="Motor|%index|dir|%Dirs|speed|%speed"
     //% speed.min=0 speed.max=255 speed.defl=200
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
@@ -102,7 +104,7 @@ namespace Funbit {
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
-    //% weight=89
+    //% weight=98
     //% blockId=FunbitMotorStop block="Motor Stop|%index"
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     export function FunbitMotorStop(index: Motors): void {
@@ -114,7 +116,7 @@ namespace Funbit {
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
-    //% weight=87
+    //% weight=97
     //% blockId=FunbitMotorStopAll block="Motor Stop All"
     export function FunbitMotorStopAll(): void {
         let buf = pins.createBuffer(4);
@@ -125,7 +127,7 @@ namespace Funbit {
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
-    //% weight=86
+    //% weight=96
     //% blockId=FunbitServoStart block="Servo|%index|degree|%degree"
     //% degree.min=0 degree.max=180
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
@@ -139,7 +141,7 @@ namespace Funbit {
     }
 
 
-    //% weight=85
+    //% weight=95
     //% inlineInputMode=inline
     //% blockId=FunbitRGBLED block="RGB LED%LEDMODE Red%red Green%green Blue%blue"
     //% red.min=0 red.max=255
@@ -156,7 +158,7 @@ namespace Funbit {
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
-    //% weight=83
+    //% weight=93
     //% blockId=FunbitRGBLEDOFF block="RGB LED OFF"
     export function FunbitRGBLEDOFF(): void {
         let buf = pins.createBuffer(5);
@@ -185,7 +187,7 @@ namespace Funbit {
     }
 
     //% blockId=Tracking block="Tracking|position %position|line %line"
-    //% weight=82
+    //% weight=92
     export function Tracking(pos: position, l: line): boolean
     {
         let ret: boolean = false;
@@ -213,4 +215,70 @@ namespace Funbit {
         }
         return ret;
     }
+
+    export enum StepperMotors {
+        SM1 = 0x1,
+        SM2 = 0x2
+    }
+
+    //% weight=81
+    //% blockId=StepperMotor28Start block="Stepper Motor 28|%index|dir|%Dirs|speed|%speed"
+    //% speed.min=0 speed.max=10 speed.defl=6
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
+    //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
+    export function StepperMotor28Start(index: StepperMotors, direction: Dirs, speed: number): void {
+        let buf = pins.createBuffer(6);
+        buf[0] = CMD_STEPPERMOTOR28;
+        buf[1] = index;
+        buf[2] = direction;
+        buf[3] = speed;
+        buf[4] = 0x00;
+        buf[5] = 0x00;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
+    //% weight=80
+    //% blockId=StepperMotor28StartWithSteps block="Stepper Motor 28|%index|dir|%Dirs|speed|%speed|steps|%steps"
+    //% speed.min=0 speed.max=10 speed.defl=6
+    //% steps.min=1 steps.max=0xffff steps.defl=20
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
+    //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
+    export function StepperMotor28StartWithSteps(index: StepperMotors, direction: Dirs, speed: number, steps: number): void {
+        let buf = pins.createBuffer(6);
+        buf[0] = CMD_STEPPERMOTOR28;
+        buf[1] = index;
+        buf[2] = direction;
+        buf[3] = speed;
+        buf[4] = steps / 256;
+        buf[5] = steps & 0xff;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
+    //% weight=79
+    //% blockId=StepperMotor28Stop block="Stepper Motor 28 Stop |%index"
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
+    export function StepperMotor28Stop(index: StepperMotors): void {
+        let buf = pins.createBuffer(6);
+        buf[0] = CMD_STEPPERMOTOR28;
+        buf[1] = index;
+        buf[2] = CMD_STOP; //stop
+        buf[3] = 0x00;
+        buf[4] = 0x00;
+        buf[5] = 0x00;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
+    //% weight=78
+    //% blockId=StepperMotor28StopAll block="Stepper Motor 28 Stop All"
+    export function StepperMotor28StopAll(): void {
+        let buf = pins.createBuffer(6);
+        buf[0] = CMD_STEPPERMOTOR28;
+        buf[1] = CMD_ALL;
+        buf[2] = CMD_STOP; //stop
+        buf[3] = 0x00;
+        buf[4] = 0x00;
+        buf[5] = 0x00;
+        pins.i2cWriteBuffer(ADDR, buf);
+    }
+
 }
