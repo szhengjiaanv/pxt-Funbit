@@ -17,5 +17,9 @@
     "Funbit.position.RightSide|block": "右侧",
     "Funbit.line.White|block": "白线",
     "Funbit.line.Black|block": "黑线",
-    "Funbit.Tracking|block": "循迹 位置%position 感应到%line"
+    "Funbit.Tracking|block": "循迹 位置%position 感应到%line",
+    "Funbit.StepperMotor28Start|block": "步进电机28%index 方向%Dirs 速度%speed",
+    "Funbit.StepperMotor28StartWithSteps|block": "步进电机28%index 方向%Dirs 速度%speed 步数%steps",
+    "Funbit.StepperMotor28Stop|block": "步进电机28%index停止",
+    "Funbit.StepperMotor28StopAll|block": "全部步进电机28停止"
 }

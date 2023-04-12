@@ -222,6 +222,7 @@ namespace Funbit {
     }
 
     //% weight=81
+    //% inlineInputMode=inline
     //% blockId=StepperMotor28Start block="Stepper Motor 28|%index|dir|%Dirs|speed|%speed"
     //% speed.min=0 speed.max=10 speed.defl=6
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
@@ -238,6 +239,7 @@ namespace Funbit {
     }
 
     //% weight=80
+    //% inlineInputMode=inline
     //% blockId=StepperMotor28StartWithSteps block="Stepper Motor 28|%index|dir|%Dirs|speed|%speed|steps|%steps"
     //% speed.min=0 speed.max=10 speed.defl=6
     //% steps.min=1 steps.max=0xffff steps.defl=20
