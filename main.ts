@@ -242,7 +242,7 @@ namespace Funbit {
     //% inlineInputMode=inline
     //% blockId=StepperMotor28StartWithSteps block="Stepper Motor 28|%index|dir|%Dirs|speed|%speed|steps|%steps"
     //% speed.min=0 speed.max=10 speed.defl=6
-    //% steps.min=1 steps.max=0xffff steps.defl=20
+    //% steps.min=1 steps.max=60000 steps.defl=20
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
     export function StepperMotor28StartWithSteps(index: StepperMotors, direction: Dirs, speed: number, steps: number): void {
