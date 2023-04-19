@@ -233,8 +233,8 @@ namespace Funbit {
         buf[1] = index;
         buf[2] = direction;
         buf[3] = speed;
-        buf[4] = 0x00;
-        buf[5] = 0x00;
+        buf[4] = 0xff;
+        buf[5] = 0xff;
         pins.i2cWriteBuffer(ADDR, buf);
     }
 
